@@ -106,4 +106,66 @@ a, span {
 #finalscore {
     background: #2ab7ca;
     padding: 15px;
+    font-size: 25px;
+}
+
+form {
+    padding-top: 15px;
+}
+
+#initials {
+    background-color: white;
+    padding: 10px;
+}
+
+#submit {
+    padding: 5px;
+    background-color: #FCBACB;
+    font-weight: bolder;
+}
+
+label, #submit {
+    font-size: 20px;
+}
+
+#scorepage {
+    display: none;
+    flex-direction: column;
+}
+
+#scorepage h2 {
+    background: #2ab7ca;
+    font-size: 30px;
+    padding: 50px 20px;
+    text-align: center;
+    background: #2ab7ca;
+    font-size: 30px;
+}
+
+#scoreboard {
+    padding: 20px;
+    padding-left: 50vw;
+    background: blue;
+    display: flex;
+    flex-direction: column;
+}
+
+#scoreboard li {
+    background: blue;
+    padding: 5px;
+    color: white;
+}
+
+#buttons {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-around;
+}
+
+#buttons a, #buttons span {
+    border: 5px solid blue;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+    background-color: #2ab7ca;
 }

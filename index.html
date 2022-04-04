@@ -10,7 +10,8 @@
 <body>
     <header>
         <nav>
-            <a href="./scores.html">View Highscores</a>
+            <!-- replace with a link and page if want separate html -->
+            <span id="highscores">View Highscores</span>
             <span id="timer">Time: 60</span>
         </nav>
     </header>
@@ -33,12 +34,23 @@
         <section id="resultspage">
             <h2>All Done!</h2>
             <p id="finalscore"></p>
-<!-- submission form goes here -->
+            <form>
+                <label for="initials">Enter Initials:</label>
+                <input type="text" name="initials" id="initials">
+                <input type="submit" value="Submit" id="submit">
+            </form>
+        </section>
+        <section id="scorepage">
+            <h2>Highscores</h2>
+            <ol id="scoreboard">
+            </ol>
+            <section id="buttons">
+                <a href="./index.html">Go Back</a>
+                <span id="clear">Clear Highscores</span>
+            </section> 
         </section>
             
     </body>
-    
-    
     <script src="./script.js"></script>
 </body>
 </html>
