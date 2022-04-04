@@ -157,25 +157,55 @@ function endGame() {
 var submitButton = document.querySelector("#submit");
 var initials = document.querySelector("#initials");
 var userScore;
+var scoreList = [];
 
 // on submit, create an object to store user's data
 submitButton.addEventListener("click", function (event) {
     event.preventDefault();
-    initials = initials.value;
+    // save initials and score as an object
     userScore = {
-        initials: initials,
+        initials: initials.value.trim(),
         score: score,
-        scoreset: `${initials} : ${score}`,
     }
-    // stringify to send to local storage
-    userScoreJson = JSON.stringify(userScore)
-    localStorage.setItem("userScore", userScoreJson), 
+    // send to local storage
+    saveScores();
+    // retrieve from local storage and add to scoreboard
+    addToScoreboard();
     // turn off result page and turn on score page
     resultsPage.setAttribute("style", "display:none");
     scorePage.setAttribute("style", "display: flex");
-    // execute function to add user to scoreboard
-    addToScoreboard();
 })
+
+function saveScores () {
+    // pull current storage from local storage
+    var storedUserScores = JSON.parse(localStorage.getItem("userScoreList"));
+    // if not empty, set our score list equal to what was pulled from storage
+    if (storedUserScores !== null) {
+        scoreList = storedUserScores;
+    }
+    // push new user's score to array
+    scoreList.push(userScore);
+    // stringify to send to local storage
+    localStorage.setItem("userScoreList", JSON.stringify(scoreList));
+}
+
+function addToScoreboard() {
+    // pull from local storage and return as object
+    var downloadedScoreList = JSON.parse(localStorage.getItem("userScoreList"));
+    // if not empty, sort from high to low scores. 
+    if (downloadedScoreList !== null) {
+        var sortedScoreList = downloadedScoreList.sort(function(a,b) {
+            return b.score - a.score;
+        });
+    }
+    // for each object in the array, create an element with text and post to scoreboard
+    for (i=0; i<sortedScoreList.length; i++) {
+        var user = sortedScoreList[i];
+        var newScore = document.createElement("li");
+        newScore.textContent = `${user.initials} : ${user.score}`;
+        scoreboard.appendChild(newScore);
+    }
+}
 
 var highscoresButton = document.querySelector("#highscores");
 var scorePage = document.querySelector("#scorepage")
@@ -186,35 +216,17 @@ highscoresButton.addEventListener("click", function() {
     questionPage.setAttribute("style", "display: none");
     scorePage.setAttribute("style", "display: flex");
     header.setAttribute("style", "display:none");
+    // run scoreboard function to pull from local storage
+    addToScoreboard();
 })
 
 var clear = document.querySelector("#clear");
 var scoreboard = document.querySelector("#scoreboard")
 
 clear.addEventListener("click", function() {
-    console.log("hello")
-    scoreboard.textContent = '';
-})
-
-// building scoreboard WIP
-function addToScoreboard () {
-    // pull from local storage and return as object
-    var savedUser = JSON.parse(localStorage.getItem("userScore"));
-    let savedScores = [];
-    // push object to array of savedScores
-    savedScores.push(savedUser);
-    if (savedScores != null) {
-        // if there are objects within array, sort by high score
-        var sortedScores = savedScores.sort(function(a,b) {
-            return b.score - a.score;
-        });
-        // post scores
-        for (i=0; i<sortedScores.length; i++) {
-            // add new post for each item in array
-            var user = sortedScores[i];
-            var newScore = document.createElement("li");
-            newScore.textContent = user.scoreset;
-            scoreboard.appendChild(newScore);
-        }
-    } 
-}
+    clear.setAttribute("style", "display: none")
+    // set local storage to empty
+    localStorage.removeItem("userScoreList");
+    // update page without previous list
+    scoreboard.textContent='';
+    })
