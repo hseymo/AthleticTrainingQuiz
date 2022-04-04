@@ -10,12 +10,12 @@
 <body>
     <header>
         <nav>
-            <a href="#">View Highscores</a>
-            <span id="timer"></span>
+            <a href="./scores.html">View Highscores</a>
+            <span id="timer">Time: 60</span>
         </nav>
     </header>
     <body>
-        <div id="homepage">
+        <section id="homepage">
             <h1>
                 Athletic Training Quiz
             </h1>
@@ -23,29 +23,17 @@
                 Try to answer all of the questions within the time limit! Keep in mind that incorrect scores will deduct 10 seconds from your time (and therefore take away potential to score points)! 
             </h2>
             <submit id="start">Start Quiz</submit>
-        </div>
-        <section class="questions" id="questionOne">
-            <h2 class="askQuestion">
-                What is your favorite color?
-            </h2>
-            <ol class="answerList">
-                <button class="possibleAnswer" class="firstChoice" value=false>1. Red</button>
-                <button class="possibleAnswer" class="secondChoice" value=false>2. Yellow</button>
-                <button class="possibleAnswer" class="thirdChoice" value=true>3. Green</button>
-                <button class="possibleAnswer" class="fourthChoice" value=false>4. Blue</button>
-            </ol>
         </section>
-        <section class="questions" id="questionTwo">
-            <h2 class="askQuestion">
-                TWO?
-            </h2>
+        <section id="questionpage">
+            <h2 class="askQuestion">question</h2>
             <ol class="answerList">
-                <button class="possibleAnswer" class="firstChoice" value=false>1. Red</button>
-                <button class="possibleAnswer" class="secondChoice" value=false>2. Yellow</button>
-                <button class="possibleAnswer" class="thirdChoice" value=true>3. Green</button>
-                <button class="possibleAnswer" class="fourthChoice" value=false>4. Blue</button>
             </ol>
-
+            <h3 id="response"></h3>
+        </section>
+        <section id="resultspage">
+            <h2>All Done!</h2>
+            <p id="finalscore"></p>
+<!-- submission form goes here -->
         </section>
             
     </body>

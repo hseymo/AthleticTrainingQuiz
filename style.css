@@ -59,40 +59,51 @@ a, span {
     border-radius: 7px;
 }
 
-#questionOne, #questionTwo, #questonThree, #questionFour, #questionFive {
+#questionpage {
     display: none;
-}
-
-.questions {
-    padding: 15vh;
     flex-direction: column;
-    align-content: center;
-    align-items: center;
-    background-color: pink;
-    text-align: center;
+    padding: 15vh;
+    background-color: blue;
 }
 
 .askQuestion {
     font-size: 30px;
-    background-color: pink;
+    background-color: #fe4a49;
+    padding: 20px 0px 20px 15vw;
 }
 
 .answerList {
-    /* change font color */
-    padding: 20px;
-    background-color: pink;
+    padding: 20px 20vw;
+    background-color: #fe7f9e;
     display: flex;
     flex-direction: column;
 }
 
-.possibleAnswer {
+.answerList li {
     padding: 5px 5px;
-    margin: 5px;
+    margin: 5px ;
     border: none;
-    background-color: pink;
+    background-color: #FCBACB;
     border-radius: 7px;
 }
 
-.possibleAnswer:hover {
-    background-color: lightpink;
+.answerList li:hover {
+    background-color: #f25278;
+}
+
+#resultspage {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+}
+
+#resultspage h2 {
+    font-size: 30px;
+    padding: 50px 20px;
+    background: #FCBACB;
+}
+
+#finalscore {
+    background: #2ab7ca;
+    padding: 15px;
 }

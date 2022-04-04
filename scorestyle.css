@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    background: #fed766;
+}
+
+header {
+    height: 12vh;
+    background: #2ab7ca;
+}
+
+h1 {
+    padding: 20px 0 20px 0;
+    text-align: center;
+    background: #2ab7ca;
+    font-size: 30px;
+}
+
+ol {
+    padding: 20px;
+    padding-left: 50vw;
+    background: blue;
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    background: blue;
+    padding: 5px;
+    color: white;
+}
+
+#buttons {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-around;
+}
+
+a, span {
+    border: 5px solid blue;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+    background-color: #2ab7ca;
+}
