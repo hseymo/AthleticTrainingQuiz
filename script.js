@@ -1,4 +1,4 @@
-// question creation
+// question creation; to add new question: create variable object and add to questions array
 var firstQuestion = {
     title: "The patella is a _____ bone.",
     choices: ['long', 'sesamoid', 'flat', 'irregular'],
@@ -29,7 +29,13 @@ var fifthQuestion = {
     answer: 'deltoid'    
 };
 
-questions = [firstQuestion, secondQuestion, thirdQuestion, fourthQuestion, fifthQuestion];
+var sixthQuestion = {
+    title: "Which of the following is not considered to be an extrinsic factor related to sports injury?",
+    choices: ['equipment', 'environment', 'type of activity', 'muscle strength'],
+    answer: 'muscle strength'    
+};
+
+questions = [firstQuestion, secondQuestion, thirdQuestion, fourthQuestion, fifthQuestion, sixthQuestion];
 
 // declare variables and create elements
 var start = document.querySelector("#start")
