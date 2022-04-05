@@ -203,6 +203,8 @@ function addToScoreboard() {
         var sortedScoreList = downloadedScoreList.sort(function(a,b) {
             return b.score - a.score;
         });
+    } else {
+        return;
     }
     // for each object in the array, create an element with text and post to scoreboard
     for (i=0; i<sortedScoreList.length; i++) {
@@ -222,6 +224,9 @@ highscoresButton.addEventListener("click", function() {
     questionPage.setAttribute("style", "display: none");
     scorePage.setAttribute("style", "display: flex");
     header.setAttribute("style", "display:none");
+    if (timeLeft != 0) {
+        clearInterval(timerInterval);
+    }
     // run scoreboard function to pull from local storage
     addToScoreboard();
 })
