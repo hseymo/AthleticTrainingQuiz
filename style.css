@@ -69,11 +69,12 @@ a, span {
 .askQuestion {
     font-size: 30px;
     background-color: #fe4a49;
-    padding: 20px 0px 20px 15vw;
+    padding: 25px;
+    text-align: center;
 }
 
 .answerList {
-    padding: 20px 20vw;
+    padding: 10px 10vw;
     background-color: #fe7f9e;
     display: flex;
     flex-direction: column;
@@ -122,6 +123,7 @@ form {
     padding: 5px;
     background-color: #FCBACB;
     font-weight: bolder;
+    margin: 10px;
 }
 
 label, #submit {
@@ -144,7 +146,7 @@ label, #submit {
 
 #scoreboard {
     padding: 20px;
-    padding-left: 50vw;
+    padding-left: 40vw;
     background: blue;
     display: flex;
     flex-direction: column;
@@ -168,4 +170,38 @@ label, #submit {
     color: black;
     text-decoration: none;
     background-color: #2ab7ca;
+}
+
+@media screen and (max-width: 770px) {
+}
+
+@media screen and (max-width: 480px) {
+
+    #homepage {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    #homepage h1 {
+        font-size: 30px;
+    }
+    #homepage h2 {
+        font-size: 16px;
+    }
+    
+    #questionpage {
+        padding: 5vh 5vw;
+    }
+
+    .askQuestion {
+        font-size: 20px;
+    }
+
+    .answerList {
+        padding: 5vh 5vw;
+    }
+    
+    .answerList li {
+        margin-left: 10px;
+    }
 }
